@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
     res.send('Hello World!!')
 })
 
-app.set('port', 3000)
+app.set('port', (process.env.PORT || 4000))
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
