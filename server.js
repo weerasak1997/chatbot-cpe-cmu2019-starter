@@ -55,10 +55,7 @@ app.post('/webhook', middleware(config), (req, res) => {
                   }
               ]
           }
-        })
-    }
-  })
-  
+        })  
     
     }
 
