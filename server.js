@@ -26,7 +26,7 @@ app.post('/webhook', middleware(config), (req, res) => {
           "altText": "This is a buttons template",
           "template": {
               "type": "buttons",
-              "thumbnailImageUrl": "https://www.google.co.th/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjmtOasyJzgAhVTknAKHUhsAcoQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.imagenesmi.com%2Fim%25C3%25A1genes%2Fdabbing-qute-dogs-ed.html&psig=AOvVaw1w0510FVO1NrMYrGzSnTsu&ust=1549180255036623",
+              "thumbnailImageUrl": "https://ih0.redbubble.net/image.577138953.9969/mp,550x550,matte,ffffff,t.3u4.jpg",
               "imageAspectRatio": "rectangle",
               "imageSize": "cover",
               "imageBackgroundColor": "#FFFFFF",
