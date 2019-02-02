@@ -40,13 +40,15 @@ app.post('/webhook', middleware(config), (req, res) => {
               "actions": [
                   {
                     "type": "postback",
-                    "label": "Buy",
-                    "data": "action=buy&itemid=123"
+                    "label": "facebook",
+                    "uri": "https://www.facebook.com/"
+                    //"data": "action=buy&itemid=123"
                   },
                   {
                     "type": "message",
-                    "label": "Add to cart",
-                    "text": "no no no"
+                    "label": "cpecmu website",
+                    "uri": "http://cpe.eng.cmu.ac.th/2013/"
+                   // "text": "no no no"
                   },
                   {
                     "type": "uri",
