@@ -20,45 +20,93 @@ app.post('/webhook', middleware(config), (req, res) => {
     if (event.type === 'message') {
       const message = event.message;
       console.log(message)
-      client.replyMessage(event.replyToken, 
-        {
-          "type": "template",
-          "altText": "This is a buttons template",
-          "template": {
-              "type": "buttons",
-              "thumbnailImageUrl": "https://ih0.redbubble.net/image.577138953.9969/mp,550x550,matte,ffffff,t.3u4.jpg",
-              "imageAspectRatio": "rectangle",
-              "imageSize": "cover",
-              "imageBackgroundColor": "#FFFFFF",
-              "title": "Jame",
-              "text": "Weerasak Chiangsoi",
-              "defaultAction": {
-                  "type": "uri",
-                  "label": "View detail",
-                  "uri": "http://google.com/"
-              },
-              "actions": [
-                  {
-                    "type": "uri",
-                    "label": "facebook",
-                    "uri": "https://www.facebook.com/"
-                    //"data": "action=buy&itemid=123"
-                  },
-                  {
-                    "type": "uri",
-                    "label": "cpecmu website",
-                    "uri": "http://cpe.eng.cmu.ac.th/2013/"
-                   // "text": "no no no"
-                  },
-                  {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://google.com"
-                  }
-              ]
-          }
-        })  
-    
+      // client.replyMessage(event.replyToken, 
+      //   {
+      //     "type": "template",
+      //     "altText": "This is a buttons template",
+      //     "template": {
+      //         "type": "buttons",
+      //         "thumbnailImageUrl": "https://ih0.redbubble.net/image.577138953.9969/mp,550x550,matte,ffffff,t.3u4.jpg",
+      //         "imageAspectRatio": "rectangle",
+      //         "imageSize": "cover",
+      //         "imageBackgroundColor": "#FFFFFF",
+      //         "title": "Jame",
+      //         "text": "Weerasak Chiangsoi",
+      //         "defaultAction": {
+      //             "type": "uri",
+      //             "label": "View detail",
+      //             "uri": "http://google.com/"
+      //         },
+      //         "actions": [
+      //             {
+      //               "type": "uri",
+      //               "label": "facebook",
+      //               "uri": "https://www.facebook.com/"
+      //               //"data": "action=buy&itemid=123"
+      //             },
+      //             {
+      //               "type": "uri",
+      //               "label": "cpecmu website",
+      //               "uri": "http://cpe.eng.cmu.ac.th/2013/"
+      //              // "text": "no no no"
+      //             },
+      //             {
+      //               "type": "uri",
+      //               "label": "View detail",
+      //               "uri": "http://google.com"
+      //             }
+      //         ]
+      //     }
+      //   })  
+      client.replyMessage(event.replyToken, {
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+                {
+                  "thumbnailImageUrl": "https://vignette.wikia.nocookie.net/line/images/b/bb/2015-brown.png/revision/latest?cb=20150808131630",
+                  "imageBackgroundColor": "#FFFFFF",
+                  "title": "this is menu",
+                  "text": "description",
+                  "actions": [
+                      {  
+                          "type":"cameraRoll",
+                          "label":"Camera roll"
+                      },
+                      {  
+                        "type":"location",
+                        "label":"Location"
+                     }
+                  ]
+                },
+                {
+                  "thumbnailImageUrl": "https://c.76.my/Malaysia/line-brown-bear-cute-pencil-case-ubiyo-1802-02-Ubiyo@6.jpg",
+                  "imageBackgroundColor": "#000000",
+                  "title": "this is menu",
+                  "text": "description",
+                  "actions": [
+                    {
+                      "type":"datetimepicker",
+                      "label":"Select date",
+                      "data":"storeId=12345",
+                      "mode":"datetime",
+                      "initial":"2017-12-25t00:00",
+                      "max":"2018-01-24t23:59",
+                      "min":"2017-12-25t00:00"
+                    },
+                    {  
+                      "type":"camera",
+                      "label":"Camera"
+                   }
+                ]
+                }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+    })
+  
     }
 
 })
