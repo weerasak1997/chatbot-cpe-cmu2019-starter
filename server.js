@@ -10,8 +10,8 @@ const config = {
 app.get('/', function (req, res) {
     res.send('Hello World!!')
 })
-app.post('/webhook', middleware(config), (req, res) => {
- console.log('webhook success')
+app.get('/webhook', middleware(config), (req, res) => {
+  res.send('Hello World!!')
 })
 
 app.set('port', (process.env.PORT || 4000))
