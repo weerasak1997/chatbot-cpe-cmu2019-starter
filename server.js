@@ -9,6 +9,14 @@ const config = {
 
 app.get('/', function (req, res) {
     res.send('Hello World!!')
+    const event = req.body.events[0];
+    if (event.type === 'message') {
+      const message = event.message;
+      client.replyMessage(event.replyToken, {
+        type: 'text',
+        text: message,
+      });
+
 })
 app.post('/webhook', middleware(config), (req, res) => {
   res.send('Hello World!!')
