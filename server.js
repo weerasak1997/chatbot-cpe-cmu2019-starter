@@ -21,12 +21,14 @@ app.post('/webhook', middleware(config), (req, res) => {
       const message = event.message;
       console.log(message)
       if(message.type === 'audio'){
-        client.replyMessage(event.replyToken, {
-          type: 'text',
-          text: 'wtf'
-        })
-      }
-      else{
+        console.log('audio');
+        
+        // client.replyMessage(event.replyToken, {
+        //   type: 'text',
+        //   text: 'wtf'
+        // })
+      } else{
+        console.log('non audio');
       // client.replyMessage(event.replyToken, {
       //   type: 'text',
       //   text: message.type
