@@ -39,13 +39,13 @@ app.post('/webhook', middleware(config), (req, res) => {
               },
               "actions": [
                   {
-                    "type": "postback",
+                    "type": "uri",
                     "label": "facebook",
                     "uri": "https://www.facebook.com/"
                     //"data": "action=buy&itemid=123"
                   },
                   {
-                    "type": "message",
+                    "type": "uri",
                     "label": "cpecmu website",
                     "uri": "http://cpe.eng.cmu.ac.th/2013/"
                    // "text": "no no no"
