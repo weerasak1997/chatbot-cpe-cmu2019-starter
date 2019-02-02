@@ -10,7 +10,11 @@ const event =new ClientRect(config)
 
 app.get('/', function (req, res) {
     res.send('Hello World!!')
-    const event = req.body.events[0];
+    
+})
+app.post('/webhook', middleware(config), (req, res) => {
+  res.send('Hello World!!')
+  const event = req.body.events[0];
     if (event.type === 'message') {
       const message = event.message;
       client.replyMessage(event.replyToken, {
@@ -19,9 +23,6 @@ app.get('/', function (req, res) {
       })
     }
 
-})
-app.post('/webhook', middleware(config), (req, res) => {
-  res.send('Hello World!!')
 })
 
 app.set('port', (process.env.PORT || 4000))
