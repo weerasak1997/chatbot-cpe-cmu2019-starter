@@ -1,5 +1,6 @@
 const express = require('express')
 const middleware = require('@line/bot-sdk').middleware
+const Client = require('@line/bot-sdk').Client
 const app = express()
 
 const config = {
