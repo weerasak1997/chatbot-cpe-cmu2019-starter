@@ -27,10 +27,10 @@ app.post('/webhook', middleware(config), (req, res) => {
         })
       }
       else{
-      client.replyMessage(event.replyToken, {
-        type: 'text',
-        text: message.type
-      })
+      // client.replyMessage(event.replyToken, {
+      //   type: 'text',
+      //   text: message.type
+      // })
     }
     }
 
